@@ -1,9 +1,5 @@
-django-admin startproject dashboard
-python manage.py startapp covid
-
-sudo docker run --name postgres_d -d -p 5432:5432 -e POSTGRES_USER=nik -e POSTGRES_PASSWORD=nikgreat -e POSTGRES_DB=covidDb postgres
-
-python3 manage.py makemigrations
-python3 manage.py makemigrations covid
-python3 manage.py migrate
-python3 manage.py runserver
+# Description 
+1. A covid dashboard that contains data of covid +ve patients of each district and state of India.
+2. Request specific states or districts data of covid patients using the front end. This retrieves the rows of data from our database using the GET request from the django.
+3. A table is created to display this list of data retrieved.
+4. Connected the PostgreSQL database with my django framework to add or retrieve data through POST/GET requests.
