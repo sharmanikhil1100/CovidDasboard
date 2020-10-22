@@ -20,15 +20,26 @@
 		<h1>Coronavirus Dashboard</h1>
 		<br> <br>
 		<hr>
+		<br>
+		<h2>Enter data to add in database</h2> 
+		<br>
+		<form action="insert" method="post">
+			<input type="textbox" name="patient_no" style="width: 30%" placeholder="Patient number"> <br>
+			<input type="textbox" name="city" style="width: 30%" placeholder="city"> <br>
+			<input type="textbox" name="state" style="width: 30%" placeholder="state"> <br>
+			<input type="textbox" name="date" style="width: 30%" placeholder="date"> <br>
+			<input type="submit" value="Enter">
+		</form>
+		<hr>
 		<br> <br>
-		<form action="dashboard/get-all/" method="get">
+		<form action="get-all" method="get">
 			<input type="textbox" style="width: 70%" placeholder="Enter Area/Region">
 			<input type="submit" value="Enter">
 		</form>
 		<br> <br>
-
+		<h3>dummy text</h3>
 		<div class="table-wrapper-scroll-y my-custom-scrollbar">
-
+		
 		<table class="table table-bordered table-striped mb-0">
 		    <thead>
 		      <tr>
@@ -37,9 +48,9 @@
 		        <th scope="col">District</th>
 		        <th scope="col">Active Cases</th>
 		      </tr>
-		    </thead>
+			</thead>
 		    <tbody>
-			{% for row in request.body %}
+			{% for row in query_result %}
 		      <tr>
 		        <th scope="row">1</th>
 		        <td>{{ row.patient_no }}</td>

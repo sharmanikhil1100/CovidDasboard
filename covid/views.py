@@ -22,6 +22,7 @@ def get_data(request):
 
         for p in CovidData.objects.raw('SELECT * FROM covid_covidData'):
             query_result.append(p)
+        print(query_result)
         return render(request, 'home/home.html', {
             'state_data':query_result
         })
@@ -29,7 +30,8 @@ def get_data(request):
 
 def insert(request):
     if request.method=="POST":
-        input_data=json.loads(request.body)        
+        print(request.POST)
+        input_data=request.POST # Showing error
         covidData=CovidData()
         covidData.patient_no=input_data["patient_no"]
         covidData.city=input_data["city"]
