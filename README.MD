@@ -4,6 +4,9 @@
 3. A table is created to display this list of data retrieved.
 4. Connected the PostgreSQL database with my django framework to add or retrieve data through POST/GET requests.
 
+## PDF link (Desription of project for evaluation) :
+[Click Here](https://docs.google.com/document/d/1cmxMSx72kc69ZoNLRwZu_zN3W1mxVUbYnhy27kgk1cE/edit?usp=sharing)
+
 ## Screenshot 1 (Home Page)
 ![Screenshot 1](Screenshot1.png)
 
