@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>C-19 dashboard</title>
+	<meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <script
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"
+    ></script>
+</head>
+<body>
+	<div class="container">
+		<br> <br>
+		<h1>Coronavirus Dashboard</h1>
+		<br> <br>
+		<hr>
+		<br> <br>
+		<form action="dashboard/get-all/" method="get">
+			<input type="textbox" style="width: 70%" placeholder="Enter Area/Region">
+			<input type="submit" value="Enter">
+		</form>
+		<br> <br>
+
+		<div class="table-wrapper-scroll-y my-custom-scrollbar">
+
+		<table class="table table-bordered table-striped mb-0">
+		    <thead>
+		      <tr>
+		        <th scope="col">#</th>
+		        <th scope="col">State</th>
+		        <th scope="col">District</th>
+		        <th scope="col">Active Cases</th>
+		      </tr>
+		    </thead>
+		    <tbody>
+			{% for row in request.body %}
+		      <tr>
+		        <th scope="row">1</th>
+		        <td>{{ row.patient_no }}</td>
+		        <td>{{ row.city }}</td>
+		        <td>{{ row.state }}</td>
+			  </tr>
+			{% endfor %}
+		    </tbody>
+		  </table>
+
+	</div>
+
+	</div>
+	<script src="client_script.js"></script>
+</body>
+</html>
